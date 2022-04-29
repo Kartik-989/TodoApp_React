@@ -1,15 +1,15 @@
 import ToDo from "./ToDo"
 import { List } from "@mui/material"
-import { border, borderRadius, Box, padding } from "@mui/system"
+import {  Box} from "@mui/system"
 
 export default   function ToDoList(props){
     function delTask(index){
-        const task = props.todos.filter((e,i,a)=>{ return i!=index })
+        const task = props.todos.filter((e,i,a)=>{ return i!==index })
         props.settodo(task)
     }
     function changeStatus(index){
         const task = props.todos.map((e,i,a)=>{
-           return  i==index ? {...e,status:!e.status} : e
+           return  i===index ? {...e,status:!e.status} : e
 
         })
 
@@ -20,7 +20,7 @@ export default   function ToDoList(props){
         
     //console.log(index,val)  
     const task = props.todos.map((e,i,a)=>{
-    return  i==index ? {...e,text:val} : e
+    return  i===index ? {...e,text:val} : e
 
     })
 
