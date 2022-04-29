@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import TopBar from "./components/TopBar";
+import AddButton from "./components/AddButton";
+import ToDoList from "./components/ToDoList";
+import { useState } from "react";
+import { AddTask } from "@mui/icons-material";
 
 function App() {
+  const [todos, settodos] = useState(
+    [
+      {
+      text:'Going gym',
+      status: false
+    },
+    {
+      text:'but bike',
+      status: false
+    },
+    {
+      text:'go to joging',
+      status: false
+    },
+    {
+      text:'Going office',
+      status: false
+    }
+    ]
+  )   
+
+
+
+ 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TopBar />
+        < AddButton addtodo={settodos} todos ={todos} />
       </header>
+        <ToDoList todos ={todos} settodo={settodos} />
     </div>
   );
 }
