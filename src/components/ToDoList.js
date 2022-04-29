@@ -17,8 +17,7 @@ export default   function ToDoList(props){
     }
 
     function editTask(index,val){
-        
-    //console.log(index,val)  
+         
     const task = props.todos.map((e,i,a)=>{
     return  i===index ? {...e,text:val} : e
 

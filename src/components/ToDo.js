@@ -13,10 +13,11 @@ import { useState } from 'react';
 import { TextField } from '@mui/material';
 
 export default function ToDo( props ){
-  const [val,setVal] = useState(props.row.text)
+  const [val,setVal] = useState()
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
+    setVal(props.row.text)
   };
   const handleClose = () => {
     setOpen(false);
@@ -26,7 +27,6 @@ export default function ToDo( props ){
     props.edit(props.index,val)
   }
 
-  //  console.log(props)
     return(
         <ListItem key={props.index}>
             <ListItemIcon onClick={()=>props.status(props.index)}>

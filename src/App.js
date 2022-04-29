@@ -2,7 +2,6 @@ import TopBar from "./components/TopBar";
 import AddButton from "./components/AddButton";
 import ToDoList from "./components/ToDoList";
 import { useState } from "react";
-import { AddTask } from "@mui/icons-material";
 
 function App() {
   const [todos, settodos] = useState(
